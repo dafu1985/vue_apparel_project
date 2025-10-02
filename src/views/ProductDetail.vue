@@ -1,0 +1,125 @@
+<template>
+  <div class="product-detail">
+    <h1>{{ product?.name }}</h1>
+
+    <!-- 画像にズームアニメーション -->
+    <div class="image-wrapper">
+      <img :src="product?.image" :alt="product?.name" />
+    </div>
+
+    <p class="category">{{ product?.category }}</p>
+    <p class="description">{{ product?.description }}</p>
+    <p class="price">{{ product?.price }}円</p>
+    <p class="stock" :class="{ 'out-of-stock': !product?.inStock }">
+      {{ product?.inStock ? '在庫あり' : '在庫なし' }}
+    </p>
+
+    <!-- 戻るボタン -->
+    <router-link to="/products" class="back-link">商品一覧に戻る</router-link>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { useRoute } from 'vue-router'
+import { computed } from 'vue'
+
+import product1Img from '../assets/product1.jpg'
+import product2Img from '../assets/product2.jpg'
+import product3Img from '../assets/product3.jpg'
+
+// 仮の商品データ
+const products = [
+  {
+    id: 1,
+    name: 'Tシャツ',
+    category: 'トップス',
+    description: '柔らかいコットン素材のTシャツ',
+    price: 2000,
+    image: product1Img,
+    inStock: true,
+  },
+  {
+    id: 2,
+    name: 'スウェット',
+    category: 'トップス',
+    description: '暖かく着心地の良いスウェット',
+    price: 3500,
+    image: product2Img,
+    inStock: false,
+  },
+  {
+    id: 3,
+    name: 'キャップ',
+    category: 'アクセサリー',
+    description: 'カジュアルスタイルにぴったりのキャップ',
+    price: 1500,
+    image: product3Img,
+    inStock: true,
+  },
+]
+
+const route = useRoute()
+
+// URLパラメータから商品IDを取得して、対応する商品を返す
+const product = computed(() => products.find((p) => p.id === Number(route.params.id)))
+</script>
+
+<style scoped>
+.product-detail {
+  text-align: center;
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+/* 画像ラッパーにホバー効果 */
+.image-wrapper {
+  width: 300px;
+  height: 300px;
+  margin: 10px auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+/* 画像自体のズーム */
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* ホバー時にズーム */
+.image-wrapper:hover img {
+  transform: scale(1.05);
+}
+
+/* 商品情報 */
+.category {
+  color: #888;
+  margin-bottom: 5px;
+}
+.description {
+  color: #555;
+  margin-bottom: 5px;
+}
+.price {
+  color: #4f46e5;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.stock {
+  color: green;
+  margin-bottom: 10px;
+}
+.stock.out-of-stock {
+  color: red;
+}
+
+/* 戻るリンク */
+.back-link {
+  text-decoration: underline;
+  color: #4f46e5;
+}
+</style>
