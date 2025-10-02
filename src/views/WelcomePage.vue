@@ -5,7 +5,7 @@
 
     <!-- メインコンテンツ -->
     <div class="content">
-      <h1>Color of Us アパレル販売サイトへようこそ！</h1>
+      <h1>Welcome to "Color of Us" SHOP</h1>
       <p>仮トップページです。こちらから各ページへ移動できます。</p>
 
       <!-- カード風スライダー -->

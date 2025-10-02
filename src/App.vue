@@ -2,9 +2,9 @@
 import AppNavbar from './components/AppNavbar.vue'
 
 // ボタン用の関数を直接定義
-const goShop = () => {
-  alert('Shopページへ遷移するイメージです')
-}
+// const goShop = () => {
+//   alert('Shopページへ遷移するイメージです')
+// }
 </script>
 
 <template>
@@ -16,17 +16,17 @@ const goShop = () => {
     <main class="main">
       <router-view />
       <h1>Color of Us アパレル販売サイト</h1>
-      <p>
+      <!-- <p>
         Visit
         <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a>
         to read the documentation
-      </p>
+      </p> -->
 
       <!-- 仮トップページ用セクション -->
       <section>
         <h2>Welcome to Color of Us!</h2>
         <p>仮のトップページです。商品一覧やバナーをここに置けます。</p>
-        <button @click="goShop">Go to Shop</button>
+        <!-- <button @click="goShop">Go to Shop</button> -->
       </section>
     </main>
   </div>
