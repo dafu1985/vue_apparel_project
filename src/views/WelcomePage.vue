@@ -37,15 +37,17 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import product1 from '../assets/product1.jpg'
-import product2 from '../assets/product2.jpg'
-import product3 from '../assets/product3.jpg'
+import product1Img from '../assets/product1.jpg'
+import no93parkaImg from '../assets/no.93.parka.png'
+import parkagreenImg from '../assets/parka.green.png'
+import parkaorangeImg from '../assets/parka.orange.png'
 
 // 商品情報
 const products = [
-  { image: product1, name: 'Tシャツ', price: 2500 },
-  { image: product2, name: 'デニムパンツ', price: 4800 },
-  { image: product3, name: 'スニーカー', price: 6800 },
+  { image: product1Img, name: 'ロゴブラックパーカー', price: 2000 },
+  { image: no93parkaImg, name: 'No93パーカー', price: 3500 },
+  { image: parkagreenImg, name: 'グリーンミリタリーパーカー', price: 1500 },
+  { image: parkaorangeImg, name: 'オレンジミリタリーパーカー', price: 4000 },
 ]
 
 const current = ref(0)

@@ -24,36 +24,46 @@ import { useRoute } from 'vue-router'
 import { computed } from 'vue'
 
 import product1Img from '../assets/product1.jpg'
-import product2Img from '../assets/product2.jpg'
-import product3Img from '../assets/product3.jpg'
+import no93parkaImg from '../assets/no.93.parka.png'
+import parkagreenImg from '../assets/parka.green.png'
+import parkaorangeImg from '../assets/parka.orange.png'
 
 // 仮の商品データ
 const products = [
   {
     id: 1,
-    name: 'Tシャツ',
+    name: 'ロゴブラックパーカー',
     category: 'トップス',
-    description: '柔らかいコットン素材のTシャツ',
-    price: 2000,
+    description: 'ロゴブラックパーカー',
+    price: 5500,
     image: product1Img,
     inStock: true,
   },
   {
     id: 2,
-    name: 'スウェット',
+    name: 'No93パーカー',
     category: 'トップス',
-    description: '暖かく着心地の良いスウェット',
-    price: 3500,
-    image: product2Img,
+    description: 'No93パーカー',
+    price: 5500,
+    image: no93parkaImg,
     inStock: false,
   },
   {
     id: 3,
-    name: 'キャップ',
-    category: 'アクセサリー',
-    description: 'カジュアルスタイルにぴったりのキャップ',
-    price: 1500,
-    image: product3Img,
+    name: 'グリーンミリタリーパーカー',
+    category: 'トップス',
+    description: 'グリーンミリタリーパーカー',
+    price: 6000,
+    image: parkagreenImg,
+    inStock: true,
+  },
+  {
+    id: 4,
+    name: 'オレンジミリタリーパーカー',
+    category: 'トップス',
+    description: 'オレンジミリタリーパーカー',
+    price: 6000,
+    image: parkaorangeImg,
     inStock: true,
   },
 ]
