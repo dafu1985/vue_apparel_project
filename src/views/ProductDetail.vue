@@ -32,9 +32,9 @@ import parkaorangeImg from '../assets/parka.orange.png'
 const products = [
   {
     id: 1,
-    name: 'ロゴブラックパーカー',
+    name: 'ロゴパーカー',
     category: 'トップス',
-    description: 'ロゴブラックパーカー',
+    description: 'ロゴパーカー',
     price: 5500,
     image: product1Img,
     inStock: true,
