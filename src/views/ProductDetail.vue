@@ -23,55 +23,12 @@
 import { useRoute } from 'vue-router'
 import { computed } from 'vue'
 
-import product1Img from '../assets/product1.jpg'
-import no93parkaImg from '../assets/no.93.parka.png'
-import parkagreenImg from '../assets/parka.green.png'
-import parkaorangeImg from '../assets/parka.orange.png'
-
-// 仮の商品データ
-const products = [
-  {
-    id: 1,
-    name: 'ロゴパーカー',
-    category: 'トップス',
-    description: 'ロゴパーカー',
-    price: 5500,
-    image: product1Img,
-    inStock: true,
-  },
-  {
-    id: 2,
-    name: 'No93パーカー',
-    category: 'トップス',
-    description: 'No93パーカー',
-    price: 5500,
-    image: no93parkaImg,
-    inStock: false,
-  },
-  {
-    id: 3,
-    name: 'グリーンミリタリーパーカー',
-    category: 'トップス',
-    description: 'グリーンミリタリーパーカー',
-    price: 6000,
-    image: parkagreenImg,
-    inStock: true,
-  },
-  {
-    id: 4,
-    name: 'オレンジミリタリーパーカー',
-    category: 'トップス',
-    description: 'オレンジミリタリーパーカー',
-    price: 6000,
-    image: parkaorangeImg,
-    inStock: true,
-  },
-]
+import { getProductById } from '../lib/products'
 
 const route = useRoute()
 
-// URLパラメータから商品IDを取得して、対応する商品を返す
-const product = computed(() => products.find((p) => p.id === Number(route.params.id)))
+// URLパラメータから商品IDを取得して、共通モジュールから対応する商品を返す
+const product = computed(() => getProductById(Number(route.params.id)))
 </script>
 
 <style scoped>

@@ -33,10 +33,7 @@ import { defineOptions, reactive } from 'vue'
 import { useCartStore } from '../stores/cart'
 
 // 仮の商品画像をインポート
-import product1Img from '../assets/product1.jpg'
-import no93parkaImg from '../assets/no.93.parka.png'
-import parkagreenImg from '../assets/parka.green.png'
-import parkaorangeImg from '../assets/parka.orange.png'
+import { getProducts } from '../lib/products'
 
 // コンポーネント名
 defineOptions({ name: 'ProductsPage' })
@@ -63,12 +60,7 @@ function handleAddToCart(product: { id: number; name: string; price: number; ima
 // }
 
 // 仮の商品データ
-const products = [
-  { id: 1, name: 'ロゴブラックパーカー', price: 2000, image: product1Img },
-  { id: 2, name: 'No93パーカー', price: 3500, image: no93parkaImg },
-  { id: 3, name: 'グリーンミリタリーパーカー', price: 1500, image: parkagreenImg },
-  { id: 4, name: 'オレンジミリタリーパーカー', price: 4000, image: parkaorangeImg },
-]
+const products = getProducts()
 </script>
 
 <style scoped>
